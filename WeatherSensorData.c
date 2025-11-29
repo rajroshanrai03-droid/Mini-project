@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int positive_count = 0;
+    int negative_count = 0;
+    int zero_count = 0;
+    int temperature;
+
+    // Read the number of readings
+    if (scanf("%d", &n) != 1) {
+        return 1; // Handle input error
+    }
+
+    // Loop through each reading
+    for (int i = 0; i < n; i++) {
+        // Read the next temperature
+        if (scanf("%d", &temperature) != 1) {
+            return 1; // Handle input error
+        }
+
+        // Check if the temperature is positive, negative, or zero
+        if (temperature > 0) {
+            positive_count++;
+        } else if (temperature < 0) {
+            negative_count++;
+        } else {
+            zero_count++;
+        }
+    }
+
+    // Print the final counts
+    printf("Positive readings: %d\n", positive_count);
+    printf("Negative readings: %d\n", negative_count);
+    printf("Zero readings: %d\n", zero_count);
+
+    return 0;
+}
